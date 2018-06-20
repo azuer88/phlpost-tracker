@@ -38,6 +38,9 @@ def map_status_code(status_code):
 
 
 def sort_by_event(iterable):
+    # sort secondary by date
+    iterable.sort(key=lambda val: val['StatusDate'])
+    # sort primary by mapped StatusCode
     iterable.sort(key=lambda val: map_status_code(val['StatusCode']))
 
 
